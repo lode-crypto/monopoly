@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width,initial-scale=1" name="viewport" />
+    <title>Mi perfil | MONOpoly CEICOM</title>
+    <link href="styles.css" rel="stylesheet" />
+    <link href="extras.css" rel="stylesheet" />
+    <script defer="" src="ui.js"></script>
+<link href="integracion.css" rel="stylesheet"/><script defer src="/socket.io/socket.io.js"></script></head>
+
+<body class="app-page">
+    <header class="app-top"><a class="logo" href="index.html">MONO<span>poly</span></a><button aria-label="Abrir menú"
+            class="mobile-menu" data-menu="toggle">☰ Menú</button>
+        <nav aria-label="Secciones principales" class="app-links"><a href="index.html"><span class="nav-ico">⌂</span>
+                Inicio</a><a href="salas.html"><span class="nav-ico">♟</span> Salas</a><a href="sala.html"><span
+                    class="nav-ico">◈</span> Sala de espera</a><a href="juego.html"><span class="nav-ico">🎲</span>
+                Tablero</a><a href="usuario.html"><span class="nav-ico">◉</span>
+                Perfil</a><a href="historial.html"><span class="nav-ico">◷</span> Historial</a><a
+                href="estadisticas.html"><span class="nav-ico">▥</span> Estadísticas</a><a
+                href="configuracion.html"><span class="nav-ico">⚙</span> Configuración</a><a href="ayuda.html"><span
+                    class="nav-ico">?</span> Cómo jugar</a><a href="admin.html"><span class="nav-ico">▦</span>
+                Administración</a></nav>
+        <div class="top-user"><span>🪙 180</span><a class="mini-link" href="login.html">Ingresar</a></div>
+    </header>
+    <main class="page-container">
+        <div class="page-title">
+            <div><span class="eyebrow">CEICOM · SIMULACIÓN EMPRESARIAL</span>
+                <h1>Mi perfil</h1>
+                <p>Información y accesos del jugador.</p>
+            </div><a class="btn primary" href="juego.html">🎲 Ver tablero</a>
+        </div>
+        <div class="profile-hero"><span class="profile-avatar">🔵</span>
+            <div>
+                <h2>JugadorDemo <span class="tag">Perfil</span></h2>
+                <p>Miembro de la comunidad · Estado: en línea</p>
+                <div class="row"><button class="btn sm" data-modal="editar-perfil">Editar perfil</button><button
+                        class="btn sm" data-modal="apariencia">Cambiar apariencia</button></div>
+            </div>
+        </div>
+        <div class="stats-row">
+            <div class="mini-stat"><b>48</b><small>Partidas</small></div>
+            <div class="mini-stat"><b>19</b><small>Victorias</small></div>
+            <div class="mini-stat"><b>214</b><small>Reputación</small></div>
+            <div class="mini-stat"><b>180</b><small>Monedas</small></div>
+        </div>
+        <div class="two-col">
+            <section class="surface">
+                <h2>Mi cuenta</h2>
+                <div class="info-row">
+                    <div><strong>Amigos</strong><small>Contactos y solicitudes</small></div>
+                </div>
+                <div class="info-row">
+                    <div><strong>Historial</strong><small>Resultados de partidas</small></div><a class="btn sm"
+                        href="historial.html">Ver historial</a>
+                </div>
+                <div class="info-row">
+                    <div><strong>Estadísticas</strong><small>Métricas de juego</small></div><a class="btn sm"
+                        href="estadisticas.html">Ver métricas</a>
+                </div>
+            </section>
+            <section class="surface">
+                <h2>Logros</h2>
+                <div class="item-grid compact-grid">
+                    <article class="item-card" data-item="Primera victoria" data-modal="logro" tabindex="0">
+                        <div class="item-art">🏆</div>
+                        <h3>Primera victoria</h3>
+                        <p>Gana una partida</p>
+                        <div class="item-foot"><span class="item-link">Ver detalles →</span></div>
+                    </article>
+                    <article class="item-card" data-item="Constructor" data-modal="logro" tabindex="0">
+                        <div class="item-art">🏠</div>
+                        <h3>Constructor</h3>
+                        <p>Compra un hotel</p>
+                        <div class="item-foot"><span class="item-link">Ver detalles →</span></div>
+                    </article>
+                    <article class="item-card" data-item="Negociador" data-modal="logro" tabindex="0">
+                        <div class="item-art">🤝</div>
+                        <h3>Negociador</h3>
+                        <p>Completa un intercambio</p>
+                        <div class="item-foot"><span class="item-link">Ver detalles →</span></div>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </main>
+    <div class="demo-overlay" hidden="" id="demo-modal">
+        <div aria-labelledby="modal-title" aria-modal="true" class="demo-dialog" role="dialog"><button
+                aria-label="Cerrar" class="modal-close" data-close="">✕</button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+    <div aria-live="polite" class="demo-toast" id="toast" role="status"></div>
+    <footer class="demo-footer">Prototipo visual en español · Inspirado en MONOpoly · Sin conexión a partidas reales
+    </footer>
+</body>
+
+</html>

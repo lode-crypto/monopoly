@@ -1,0 +1,13 @@
+.live-token{position:absolute;bottom:4px;width:18px;height:18px;border:2px solid #fff;border-radius:50%;color:#fff;font-size:11px;font-weight:bold;display:grid;place-items:center;z-index:4;box-shadow:0 1px 4px #0008}
+.live-property{display:flex;flex-direction:column;align-items:stretch;gap:7px;padding:12px}
+.live-property .btn{margin:3px;font-size:11px}.player-label small{display:block;font-size:10px}.player-cash{font-size:12px;white-space:nowrap}
+.live-dice{font-size:24px}.round-timer{font-size:14px;white-space:normal}#teacher-controls{display:flex;flex-wrap:wrap;gap:8px}.bankrupt-bar{flex-wrap:wrap;gap:6px}
+.demo-dialog{max-height:90vh;overflow:auto}.demo-dialog pre{white-space:pre-wrap}[hidden]{display:none!important}button:disabled{opacity:.45;cursor:not-allowed}
+:focus-visible{outline:3px solid #c7e76c;outline-offset:3px}#form-error,.auth-message{color:#f0a6a6;white-space:normal}.auth-message:empty{display:none}
+.prop-tile{position:relative}.center-note{max-width:95%;white-space:normal}.surface .data-table td{white-space:nowrap}details{padding:8px 0}
+.fusion-game .live-property{align-items:stretch;flex-direction:column}
+.fusion-game .actual-game-sidebar .module-header h3{position:static;transform:none;white-space:normal;text-align:center;width:100%}
+.fusion-game .actual-game-sidebar .player-row{grid-template-columns:28px minmax(0,1fr);height:auto;min-height:64px}
+.fusion-game .actual-game-sidebar .player-cash{grid-column:2;justify-self:start}
+.fusion-game .actual-game-sidebar .player-label{overflow:visible;text-overflow:clip;white-space:normal;font-size:12px}
+@media(max-width:1420px){.fusion-game .actual-game-sidebar>*{width:100%;box-sizing:border-box}.fusion-game .board-wrap-v2::after{content:none}.fusion-game .players-panel{align-self:stretch}}

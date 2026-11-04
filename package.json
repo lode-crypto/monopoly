@@ -1,0 +1,30 @@
+{
+  "name": "monopoly-ceicom",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Simulación empresarial educativa CEICOM",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env server/index.js",
+    "dev": "node --env-file-if-exists=.env --watch server/index.js",
+    "db:migrate": "node --env-file-if-exists=.env server/setup.js migrate",
+    "db:admin": "node --env-file-if-exists=.env server/setup.js admin",
+    "test": "node --test --test-concurrency=1 tests/*.test.js",
+    "test:ui": "node tests/browser.mjs"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.1.0",
+    "helmet": "^8.1.0",
+    "pg": "^8.16.3",
+    "socket.io": "^4.8.1",
+    "zod": "^4.1.0"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.3.10",
+    "socket.io-client": "^4.8.1",
+    "supertest": "^7.1.4",
+    "@playwright/test": "^1.56.0"
+  }
+}

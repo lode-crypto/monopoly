@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width,initial-scale=1.0" name="viewport" />
+    <title>Sala de espera | MONOpoly CEICOM</title>
+    <link href="styles.css" rel="stylesheet" />
+    <link href="extras.css" rel="stylesheet" />
+    <script defer="" src="ui.js"></script>
+<link href="integracion.css" rel="stylesheet"/><script defer src="/socket.io/socket.io.js"></script></head>
+
+<body>
+    <div class="game-shortcuts"><a href="index.html">⌂ Inicio</a><a href="salas.html">♟ Mis partidas</a><a href="historial.html">Historial</a></div>
+    <main class="layout-lobby">
+        <aside class="lobby-left"><a class="logo" href="index.html">MONO<span>poly</span></a>
+            <section class="card">
+                <h3>Compartir esta partida ⓘ</h3>
+                <div class="share-input"><input class="input" readonly="" value="https://MONOpoly/room/demo" /><button
+                        class="btn sm">▣ Copiar</button></div>
+            </section>
+            <div class="ad-placeholder">Espacio publicitario</div>
+            <section class="card chat">
+                <h3>Chat de la sala</h3>
+                <div class="empty-chat">☁   Aún no hay mensajes</div>
+                <div class="chat-bottom">El chat es solo decorativo en esta demo.</div>
+            </section>
+        </aside>
+        <section class="lobby-stage">
+            <div class="ghost-board"></div>
+            <div class="appearance">
+                <p>Selecciona la apariencia de tu jugador:</p>
+                <div class="color-grid">
+                    <div class="color-dot" style="--dot:#bfdf62" title="Color 1"></div>
+                    <div class="color-dot" style="--dot:#ad8641" title="Color 2"></div>
+                    <div class="color-dot" style="--dot:#ff8942" title="Color 3"></div>
+                    <div class="color-dot" style="--dot:#c94d51" title="Color 4"></div>
+                    <div class="color-dot selected" style="--dot:#5a9fe2" title="Color 5"></div>
+                    <div class="color-dot" style="--dot:#78dfe8" title="Color 6"></div>
+                    <div class="color-dot" style="--dot:#069d8f" title="Color 7"></div>
+                    <div class="color-dot" style="--dot:#68e450" title="Color 8"></div>
+                    <div class="color-dot" style="--dot:#a17a6e" title="Color 9"></div>
+                    <div class="color-dot" style="--dot:#bf3797" title="Color 10"></div>
+                    <div class="color-dot" style="--dot:#f87da4" title="Color 11"></div>
+                    <div class="color-dot" style="--dot:#503a87" title="Color 12"></div>
+                </div><a class="btn primary" href="juego.html">Entrar al juego   →</a>
+                <p class="muted small" style="margin-top:65px">🛒   Más apariencias</p>
+            </div>
+        </section>
+        <aside class="lobby-right">
+            <section class="card">
+                <div class="players">
+                    <div class="row"><span class="avatar" style="--avatar:#7853d5">🎭</span><b>JayCee</b><span
+                            class="tag">♛ Anfitrión</span></div>
+                    <div class="row"><span class="avatar" style="--avatar:#f4bd30">🎭</span><b>Yondai hokage</b></div>
+                    <div class="row"><span class="avatar" style="--avatar:#5da7df">🎭</span><b>Visitante</b></div>
+                </div>
+            </section>
+            <section class="card settings">
+                <h3>Configuración de la partida</h3>
+                <div class="settings-item">
+                    <div class="iconlabel"><span class="sym">👥</span>
+                        <div><b>Máximo de jugadores</b>
+                            <div class="helper">Hasta 4 participantes</div>
+                        </div>
+                    </div><span aria-label="Estado visual" class="toggle on" data-switch=""></span>
+                </div>
+                <div class="settings-item">
+                    <div class="iconlabel"><span class="sym">🔑</span>
+                        <div><b>Sala privada</b>
+                            <div class="helper">Acceso mediante enlace</div>
+                        </div>
+                    </div><span aria-label="Estado visual" class="toggle" data-switch=""></span>
+                </div>
+                <div class="settings-item">
+                    <div class="iconlabel"><span class="sym">🤖</span>
+                        <div><b>Permitir bots</b>
+                            <div class="helper">Los bots pueden unirse</div>
+                        </div>
+                    </div><span aria-label="Estado visual" class="toggle" data-switch=""></span>
+                </div>
+                <div class="settings-item">
+                    <div class="iconlabel"><span class="sym">🗺️</span>
+                        <div><b>Mapa de juego</b>
+                            <div class="helper">Clásico · Ciudades del mundo</div>
+                        </div>
+                    </div><span aria-label="Estado visual" class="toggle on" data-switch=""></span>
+                </div>
+                <hr class="sep" />
+                <div class="settings-title">Reglas de juego</div>
+                <div class="settings-item">
+                    <div class="iconlabel"><span class="sym">💰</span>
+                        <div><b>Renta x2 en propiedades</b>
+                            <div class="helper">Cobro doble por conjunto completo</div>
+                        </div>
+                    </div><span aria-label="Estado visual" class="toggle on" data-switch=""></span>
+                </div>
+                <div class="settings-item">
+                    <div class="iconlabel"><span class="sym">🏝️</span>
+                        <div><b>Dinero por vacaciones</b>
+                            <div class="helper">Acumular recompensas al descansar</div>
+                        </div>
+                    </div><span aria-label="Estado visual" class="toggle on" data-switch=""></span>
+                </div>
+                <div class="settings-item">
+                    <div class="iconlabel"><span class="sym">🔨</span>
+                        <div><b>Subasta</b>
+                            <div class="helper">Subastar propiedades no compradas</div>
+                        </div>
+                    </div><span aria-label="Estado visual" class="toggle" data-switch=""></span>
+                </div>
+                <div class="settings-item">
+                    <div class="iconlabel"><span class="sym">🚓</span>
+                        <div><b>Sin rentas en prisión</b>
+                            <div class="helper">Suspender cobros en prisión</div>
+                        </div>
+                    </div><span aria-label="Estado visual" class="toggle on" data-switch=""></span>
+                </div>
+                <div class="settings-item">
+                    <div class="iconlabel"><span class="sym">🏦</span>
+                        <div><b>Hipotecas</b>
+                            <div class="helper">Permitir hipotecar propiedades</div>
+                        </div>
+                    </div><span aria-label="Estado visual" class="toggle on" data-switch=""></span>
+                </div>
+            </section><a class="btn primary wide" href="juego.html">▶   Iniciar partida (vista previa)</a>
+        </aside>
+    </main>
+    <div class="demo-overlay" hidden="" id="demo-modal">
+        <div aria-labelledby="modal-title" aria-modal="true" class="demo-dialog" role="dialog"><button
+                aria-label="Cerrar" class="modal-close" data-close="">✕</button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+    <div class="demo-toast" id="toast" role="status"></div>
+</body>
+
+</html>

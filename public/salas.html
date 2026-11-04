@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width,initial-scale=1" name="viewport" />
+    <title>Todas las salas | MONOpoly CEICOM</title>
+    <link href="styles.css" rel="stylesheet" />
+    <link href="extras.css" rel="stylesheet" />
+    <script defer="" src="ui.js"></script>
+<link href="integracion.css" rel="stylesheet"/><script defer src="/socket.io/socket.io.js"></script></head>
+
+<body class="app-page">
+    <header class="app-top"><a class="logo" href="index.html">MONO<span>poly</span></a><button aria-label="Abrir menú"
+            class="mobile-menu" data-menu="toggle">☰ Menú</button>
+        <nav aria-label="Secciones principales" class="app-links"><a href="index.html"><span class="nav-ico">⌂</span>
+                Inicio</a><a href="salas.html"><span class="nav-ico">♟</span> Salas</a><a href="sala.html"><span
+                    class="nav-ico">◈</span> Sala de espera</a><a href="juego.html"><span class="nav-ico">🎲</span>
+                Tablero</a><a href="usuario.html"><span class="nav-ico">◉</span>
+                Perfil</a><a href="historial.html"><span class="nav-ico">◷</span> Historial</a><a
+                href="estadisticas.html"><span class="nav-ico">▥</span> Estadísticas</a><a
+                href="configuracion.html"><span class="nav-ico">⚙</span> Configuración</a><a href="ayuda.html"><span
+                    class="nav-ico">?</span> Cómo jugar</a><a href="admin.html"><span class="nav-ico">▦</span>
+                Administración</a></nav>
+        <div class="top-user"><span>🪙 180</span><a class="mini-link" href="login.html">Ingresar</a></div>
+    </header>
+    <main class="page-container">
+        <div class="page-title">
+            <div><span class="eyebrow">CEICOM · SIMULACIÓN EMPRESARIAL</span>
+                <h1>Todas las salas</h1>
+                <p>Encuentra una partida pública o crea una sala privada.</p>
+            </div><a class="btn primary" href="juego.html">🎲 Ver tablero</a>
+        </div>
+        <div class="stats-row">
+            <div class="mini-stat"><b>26</b><small>Salas públicas · simulación</small></div>
+            <div class="mini-stat"><b>4</b><small>Jugadores por sala</small></div>
+            <div class="mini-stat"><b>3</b><small>Mapas disponibles</small></div>
+        </div>
+        <div class="surface">
+            <div class="section-bar">
+                <h2>Buscar partida</h2>
+                <div class="inline-controls"><input aria-label="Buscar sala" class="input"
+                        placeholder="Buscar por nombre…" /><select>
+                        <option>Todas las salas</option>
+                        <option>Con lugares disponibles</option>
+                        <option>Privadas</option>
+                    </select><button class="btn primary sm" data-modal="crear-sala">＋ Crear sala</button></div>
+            </div>
+            <div class="room-grid">
+                <div class="room-card">
+                    <div class="room-emoji">🎲</div>
+                    <h3>Ciudad mundial</h3>
+                    <p>👥 2 / 4 jugadores  ·  Clásico</p>
+                    <div class="room-bottom"><span class="tag success">Sala de muestra</span><a class="btn sm primary"
+                            href="sala.html">Entrar →</a></div>
+                </div>
+                <div class="room-card">
+                    <div class="room-emoji">🎲</div>
+                    <h3>Partida rápida</h3>
+                    <p>👥 3 / 4 jugadores  ·  Clásico</p>
+                    <div class="room-bottom"><span class="tag success">Sala de muestra</span><a class="btn sm primary"
+                            href="sala.html">Entrar →</a></div>
+                </div>
+                <div class="room-card">
+                    <div class="room-emoji">🎲</div>
+                    <h3>Entre amigos</h3>
+                    <p>👥 2 / 6 jugadores  ·  Equipos</p>
+                    <div class="room-bottom"><span class="tag success">Sala de muestra</span><a class="btn sm primary"
+                            href="sala.html">Entrar →</a></div>
+                </div>
+                <div class="room-card">
+                    <div class="room-emoji">🎲</div>
+                    <h3>Salón de principiantes</h3>
+                    <p>👥 1 / 4 jugadores  ·  Clásico</p>
+                    <div class="room-bottom"><span class="tag success">Sala de muestra</span><a class="btn sm primary"
+                            href="sala.html">Entrar →</a></div>
+                </div>
+                <div class="room-card">
+                    <div class="room-emoji">🎲</div>
+                    <h3>Mapa de la suerte</h3>
+                    <p>👥 4 / 8 jugadores  ·  Especial</p>
+                    <div class="room-bottom"><span class="tag success">Sala de muestra</span><a class="btn sm primary"
+                            href="sala.html">Entrar →</a></div>
+                </div>
+                <div class="room-card">
+                    <div class="room-emoji">🎲</div>
+                    <h3>Sala privada</h3>
+                    <p>👥 2 / 4 jugadores  ·  Privado</p>
+                    <div class="room-bottom"><span class="tag success">Sala de muestra</span><a class="btn sm primary"
+                            href="sala.html">Entrar →</a></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="demo-overlay" hidden="" id="demo-modal">
+        <div aria-labelledby="modal-title" aria-modal="true" class="demo-dialog" role="dialog"><button
+                aria-label="Cerrar" class="modal-close" data-close="">✕</button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+    <div aria-live="polite" class="demo-toast" id="toast" role="status"></div>
+    <footer class="demo-footer">Prototipo visual en español · Inspirado en MONOpoly · Sin conexión a partidas reales
+    </footer>
+</body>
+
+</html>

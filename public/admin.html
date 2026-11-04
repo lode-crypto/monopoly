@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width,initial-scale=1.0" name="viewport" />
+    <title>Panel de administración | MONOpoly CEICOM</title>
+    <link href="styles.css" rel="stylesheet" />
+    <link href="extras.css" rel="stylesheet" />
+    <script defer="" src="ui.js"></script>
+<link href="integracion.css" rel="stylesheet"/><script defer src="/socket.io/socket.io.js"></script></head>
+
+<body>
+    <div class="legacy-shortcuts"><a href="index.html">Inicio</a><a href="salas.html">Salas</a><a href="perfil.html">Perfil</a><a
+            href="historial.html">Historial</a><a href="configuracion.html">Configuración</a></div>
+    <div class="dashboard-layout">
+        <aside class="sidebar"><a class="logo" href="index.html">MONO<span>poly</span></a><a class="nav-item"
+                href="usuario.html"><span class="sym">◉</span>Mi perfil</a><a class="nav-item" href="sala.html"><span
+                    class="sym">🎲</span>Salas de juego</a><a class="nav-item" href="juego.html"><span
+                    class="sym">▦</span>Ver tablero</a><a class="nav-item active" href="admin.html"><span
+                    class="sym">⚙</span>Administración</a>
+            <div class="sidebar-bottom"><a class="nav-item" href="index.html"><span class="sym">↩</span>Salir al
+                    inicio</a></div>
+        </aside>
+        <main class="dashboard-content">
+            <header class="dashboard-top"><span class="muted small">Panel / Administración</span>
+                <div class="top-actions"><span>🔔</span><span class="avatar" style="--avatar:#7958d9">🎭</span></div>
+            </header>
+            <h1 class="page-heading">Panel de administración</h1>
+            <p class="page-subheading">Vista general de jugadores, salas y actividad del sistema.</p>
+            <div class="metrics">
+                <div class="card">
+                    <div class="metric-label">Usuarios registrados</div>
+                    <div class="stat">1,284</div>
+                    <div class="metric-foot">↗ +12.8% este mes</div>
+                </div>
+                <div class="card">
+                    <div class="metric-label">Salas activas</div>
+                    <div class="stat">36</div>
+                    <div class="metric-foot">● En línea</div>
+                </div>
+                <div class="card">
+                    <div class="metric-label">Partidas completadas</div>
+                    <div class="stat">8,412</div>
+                    <div class="metric-foot">↗ +7.2% este mes</div>
+                </div>
+                <div class="card">
+                    <div class="metric-label">Jugadores conectados</div>
+                    <div class="stat">142</div>
+                    <div class="helper">Durante la última hora</div>
+                </div>
+            </div>
+            <div class="dashboard-grid">
+                <section class="card">
+                    <div class="panel-header">
+                        <h3>Gestión de usuarios</h3><button class="btn primary sm">+ Nuevo usuario</button>
+                    </div>
+                    <div class="table-scroll">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Usuario</th>
+                                    <th>Correo</th>
+                                    <th>Rol</th>
+                                    <th>Estado</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>JayCee</td>
+                                    <td>jaycee@ejemplo.com</td>
+                                    <td>Admin</td>
+                                    <td><span class="tag success">Activo</span></td>
+                                    <td>✎ · ⋯</td>
+                                </tr>
+                                <tr>
+                                    <td>JugadorDemo</td>
+                                    <td>demo@ejemplo.com</td>
+                                    <td>Jugador</td>
+                                    <td><span class="tag success">Activo</span></td>
+                                    <td>✎ · ⋯</td>
+                                </tr>
+                                <tr>
+                                    <td>Yondai</td>
+                                    <td>yondai@ejemplo.com</td>
+                                    <td>Jugador</td>
+                                    <td><span class="tag success">Activo</span></td>
+                                    <td>✎ · ⋯</td>
+                                </tr>
+                                <tr>
+                                    <td>FreeeZard</td>
+                                    <td>freezard@ejemplo.com</td>
+                                    <td>Jugador</td>
+                                    <td><span class="tag purple">Inactivo</span></td>
+                                    <td>✎ · ⋯</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                <section class="card">
+                    <h3>Actividad reciente</h3>
+                    <div class="activity">
+                        <div class="row space"><b>🎲 Sala #204 creada</b><span class="helper">Hace 2 min</span></div>
+                        <div class="helper">Nuevo anfitrión: JayCee</div>
+                    </div>
+                    <div class="activity">
+                        <div class="row space"><b>👤 Usuario registrado</b><span class="helper">Hace 12 min</span></div>
+                        <div class="helper">Cuenta nueva: Guest_412</div>
+                    </div>
+                    <div class="activity">
+                        <div class="row space"><b>🏆 Partida finalizada</b><span class="helper">Hace 18 min</span></div>
+                        <div class="helper">Sala #201 · 4 participantes</div>
+                    </div>
+                    <div class="activity">
+                        <div class="row space"><b>🛡️ Moderación</b><span class="helper">Hace 1 h</span></div>
+                        <div class="helper">Revisión de reportes pendientes</div>
+                    </div>
+                </section>
+                <section class="card">
+                    <div class="panel-header">
+                        <h3>Salas en curso</h3><span class="tag purple">3 destacadas</span>
+                    </div>
+                    <div class="table-scroll">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Anfitrión</th>
+                                    <th>Jugadores</th>
+                                    <th>Modalidad</th>
+                                    <th>Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#204</td>
+                                    <td>JayCee</td>
+                                    <td>4 / 4</td>
+                                    <td>Clásico</td>
+                                    <td><span class="tag success">En juego</span></td>
+                                </tr>
+                                <tr>
+                                    <td>#203</td>
+                                    <td>Yondai</td>
+                                    <td>2 / 4</td>
+                                    <td>Privada</td>
+                                    <td><span class="tag purple">Esperando</span></td>
+                                </tr>
+                                <tr>
+                                    <td>#202</td>
+                                    <td>Visitante</td>
+                                    <td>3 / 4</td>
+                                    <td>Clásico</td>
+                                    <td><span class="tag success">En juego</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                <section class="card">
+                    <h3>Configuraciones generales</h3>
+                    <div class="settings-item">
+                        <div class="iconlabel"><span class="sym">🎲</span>
+                            <div><b>Habilitar nuevas salas</b>
+                                <div class="helper">Permitir la creación de partidas</div>
+                            </div>
+                        </div><span aria-label="Estado visual" class="toggle on"></span>
+                    </div>
+                    <div class="settings-item">
+                        <div class="iconlabel"><span class="sym">👥</span>
+                            <div><b>Registro de usuarios</b>
+                                <div class="helper">Permitir nuevos registros</div>
+                            </div>
+                        </div><span aria-label="Estado visual" class="toggle on"></span>
+                    </div>
+                    <div class="settings-item">
+                        <div class="iconlabel"><span class="sym">🔔</span>
+                            <div><b>Notificaciones</b>
+                                <div class="helper">Avisos de actividad</div>
+                            </div>
+                        </div><span aria-label="Estado visual" class="toggle on"></span>
+                    </div>
+                </section>
+            </div>
+            <div class="screen-only-note">* Las cifras, usuarios y botones son elementos de demostración. No hay
+                backend.</div>
+        </main>
+    </div>
+    <div class="demo-overlay" hidden="" id="demo-modal">
+        <div aria-labelledby="modal-title" aria-modal="true" class="demo-dialog" role="dialog"><button
+                aria-label="Cerrar" class="modal-close" data-close="">✕</button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+    <div class="demo-toast" id="toast" role="status"></div>
+</body>
+
+</html>

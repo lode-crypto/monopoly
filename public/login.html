@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width,initial-scale=1" name="viewport" />
+    <title>Acceso de usuario | MONOpoly CEICOM</title>
+    <link href="styles.css" rel="stylesheet" />
+    <link href="extras.css" rel="stylesheet" />
+    <script defer="" src="ui.js"></script>
+<link href="integracion.css" rel="stylesheet"/><script defer src="/socket.io/socket.io.js"></script></head>
+
+<body class="app-page">
+    <header class="app-top"><a class="logo" href="index.html">MONO<span>poly</span></a><button aria-label="Abrir menú"
+            class="mobile-menu" data-menu="toggle">☰ Menú</button>
+        <nav aria-label="Secciones principales" class="app-links"><a href="index.html"><span class="nav-ico">⌂</span>
+                Inicio</a><a href="salas.html"><span class="nav-ico">♟</span> Salas</a><a href="sala.html"><span
+                    class="nav-ico">◈</span> Sala de espera</a><a href="juego.html"><span class="nav-ico">🎲</span>
+                Tablero</a><a href="usuario.html"><span class="nav-ico">◉</span>
+                Perfil</a><a href="historial.html"><span class="nav-ico">◷</span> Historial</a><a
+                href="estadisticas.html"><span class="nav-ico">▥</span> Estadísticas</a><a
+                href="configuracion.html"><span class="nav-ico">⚙</span> Configuración</a><a href="ayuda.html"><span
+                    class="nav-ico">?</span> Cómo jugar</a><a href="admin.html"><span class="nav-ico">▦</span>
+                Administración</a></nav>
+        <div class="top-user"><span>🪙 180</span><a class="mini-link" href="login.html">Ingresar</a></div>
+    </header>
+    <main class="page-container">
+        <div class="page-title">
+            <div><span class="eyebrow">CEICOM · SIMULACIÓN EMPRESARIAL</span>
+                <h1>Acceso de usuario</h1>
+                <p>Formularios de acceso y registro, únicamente visuales.</p>
+            </div><a class="btn primary" href="juego.html">🎲 Ver tablero</a>
+        </div>
+        <div class="auth-grid">
+            <section class="surface">
+                <h2>Iniciar sesión</h2><label class="form-label">Correo electrónico<input class="input"
+                        placeholder="correo@ejemplo.com" type="email" /></label><label
+                    class="form-label">Contraseña<input class="input" placeholder="••••••••"
+                        type="password" /></label><button class="btn primary wide" data-modal="login">Ingresar
+                    (demostración)</button>
+                <p class="fineprint">No se envían ni almacenan datos.</p>
+            </section>
+            <section class="surface">
+                <h2>Crear una cuenta</h2><label class="form-label">Nombre de usuario<input class="input"
+                        placeholder="Tu nombre" /></label><label class="form-label">Correo electrónico<input
+                        class="input" placeholder="correo@ejemplo.com" type="email" /></label><label
+                    class="form-label">Contraseña<input class="input" placeholder="••••••••"
+                        type="password" /></label><button class="btn primary wide" data-modal="registro">Registrarme
+                    (demostración)</button>
+            </section>
+        </div>
+    </main>
+    <div class="demo-overlay" hidden="" id="demo-modal">
+        <div aria-labelledby="modal-title" aria-modal="true" class="demo-dialog" role="dialog"><button
+                aria-label="Cerrar" class="modal-close" data-close="">✕</button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+    <div aria-live="polite" class="demo-toast" id="toast" role="status"></div>
+    <footer class="demo-footer">Prototipo visual en español · Inspirado en MONOpoly · Sin conexión a partidas reales
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,679 @@
+/* Combinación solicitada: tablero de V3 + panel izquierdo de V4 + panel derecho de captura. */
+body:has(.fusion-game) {
+  background: #110c1b;
+  color: #f8f5ff
+}
+
+.layout-game.fusion-game {
+  display: grid;
+  grid-template-columns: minmax(290px, 1fr) 866px minmax(300px, 1fr);
+  gap: 14px;
+  width: max(100%, 1490px);
+  max-width: none;
+  padding: 12px 14px 20px;
+  min-height: 100vh;
+  align-items: start
+}
+
+.fusion-game .game-side {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  min-width: 0
+}
+
+.fusion-game .side-left .logo {
+  font-size: 39px;
+  line-height: 1.08;
+  margin: 0 0 2px
+}
+
+.fusion-game .side-left .compact-card {
+  border: none;
+  background: #2a203e;
+  border-radius: 9px;
+  padding: 14px
+}
+
+.fusion-game .side-left .compact-card h3 {
+  text-align: center;
+  font-size: 14px;
+  color: #ac98d0;
+  margin: 0 0 11px
+}
+
+.fusion-game .side-left .share-input {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 7px
+}
+
+.fusion-game .side-left .share-input .input {
+  background: #160f24;
+  border: none;
+  border-radius: 8px;
+  padding: 9px 11px;
+  height: 37px;
+  font-size: 12px;
+  min-width: 0
+}
+
+.fusion-game .side-left .share-actions {
+  display: contents
+}
+
+.fusion-game .side-left .share-actions>a:nth-child(1) {
+  background: #1b132b;
+  white-space: nowrap;
+  font-size: 12px;
+  padding: 8px 12px
+}
+
+.fusion-game .side-left .share-actions>a:nth-child(2) {
+  display: none
+}
+
+.fusion-game .ad-showcase {
+  width: min(260px, 86%);
+  height: 215px;
+  margin: 0 auto;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #ddf2f3, #aed3da);
+  color: #12363c;
+  text-align: center
+}
+
+.fusion-game .ad-icon {
+  font-size: 54px;
+  color: #22525e;
+  line-height: 1
+}
+
+.fusion-game .ad-brand {
+  font-size: 21px;
+  letter-spacing: -1px;
+  font-weight: 900
+}
+
+.fusion-game .ad-showcase p {
+  background: #193840;
+  color: white;
+  border-radius: 5px;
+  padding: 9px 18px;
+  font-weight: 800;
+  font-size: 11px;
+  margin: 0
+}
+
+.fusion-game .side-left .chat {
+  height: 370px;
+  min-height: 0;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column
+}
+
+.fusion-game .chat-heading {
+  height: 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  color: #a393c5;
+  padding: 0 14px;
+  font-size: 13px
+}
+
+.fusion-game .chat-heading strong {
+  text-align: center;
+  font-size: 14px
+}
+
+.fusion-game .empty-chat {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 13px;
+  color: #857799;
+  font-size: 12px;
+  flex: 1
+}
+
+.fusion-game .chat-input {
+  border-top: 1px solid #423354;
+  height: 54px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 0 13px;
+  color: #877a9b;
+  font-size: 12px
+}
+
+.fusion-game .chat-input>span:first-child {
+  border-radius: 30px;
+  background: #1f162e;
+  padding: 10px 12px;
+  flex: 1
+}
+
+.fusion-game .send-circle {
+  border-radius: 50%;
+  background: #1f162e;
+  padding: 7px 9px
+}
+
+/* V3 conservado: su tablero original mantiene 866 x 866 sin sobreescritura de medidas internas */
+.fusion-game .board-wrap-v2 {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 866px;
+  min-width: 866px;
+  overflow: visible;
+  padding: 0
+}
+
+.fusion-game .board-reference {
+  width: 866px;
+  min-width: 866px;
+  height: 866px;
+  min-height: 866px;
+  flex: none
+}
+
+/* Nuevo panel derecho */
+.fusion-game .actual-game-sidebar {
+  gap: 16px
+}
+
+.fusion-game .players-panel,
+.fusion-game .side-module {
+  background: #29203d;
+  border-radius: 8px
+}
+
+.fusion-game .players-panel {
+  padding: 13px 11px
+}
+
+.fusion-game .player-row {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 11px;
+  min-height: 54px;
+  padding: 7px 12px;
+  border-radius: 4px;
+  position: relative
+}
+
+.fusion-game .player-row.selected {
+  background: #21182f
+}
+
+.fusion-game .player-row.selected:before {
+  content: "";
+  position: absolute;
+  left: -11px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #54adff;
+  border-radius: 2px
+}
+
+.fusion-game .face {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: block;
+  position: relative;
+  box-shadow: inset -8px -7px #0003;
+  flex: none
+}
+
+.fusion-game .face:before {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 15px;
+  width: 6px;
+  height: 7px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 12px 0 white
+}
+
+.fusion-game .face:after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 17px;
+  width: 3px;
+  height: 4px;
+  background: #1c1b29;
+  border-radius: 50%;
+  box-shadow: 12px 0 #1c1b29
+}
+
+.fusion-game .face.purple {
+  background: #8652d9
+}
+
+.fusion-game .face.blue {
+  background: #62a6e2
+}
+
+.fusion-game .face.red {
+  background: #dc5251
+}
+
+.fusion-game .face.pink {
+  background: #d64b9c
+}
+
+.fusion-game .face.red i:before {
+  content: "♜";
+  position: absolute;
+  top: -13px;
+  left: 8px;
+  font-style: normal;
+  color: #fff;
+  font-size: 19px
+}
+
+.fusion-game .player-label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 14px;
+  font-weight: 600
+}
+
+.fusion-game .player-cash {
+  font-size: 14px;
+  color: #fff;
+  font-weight: 500
+}
+
+.fusion-game .robot {
+  font-size: 15px;
+  color: #817299;
+  margin-left: 4px
+}
+
+.fusion-game .me-icon {
+  border: 1px solid #6a5c83;
+  border-radius: 3px;
+  padding: 1px 4px;
+  margin-left: 5px;
+  color: #bfb4d8
+}
+
+.fusion-game .crown {
+  color: #fac43a;
+  margin-left: 4px;
+  font-size: 18px
+}
+
+.fusion-game .bankrupt-bar {
+  display: flex;
+  justify-content: flex-end
+}
+
+.fusion-game .fake-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 12px;
+  white-space: nowrap
+}
+
+.fusion-game .bankrupt {
+  background: #e46e66;
+  padding: 8px 13px
+}
+
+.fusion-game .side-module {
+  padding: 11px;
+  min-height: 120px
+}
+
+.fusion-game .module-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 36px;
+  padding: 0 1px 13px;
+  position: relative
+}
+
+.fusion-game .module-header h3 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 15px;
+  color: #ab98d0;
+  margin: 0;
+  white-space: nowrap
+}
+
+.fusion-game .module-header.centered {
+  justify-content: center;
+  padding: 0 0 13px
+}
+
+.fusion-game .create {
+  background: #7f4ce9;
+  padding: 10px 13px;
+  margin-left: auto
+}
+
+.fusion-game .module-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  text-align: center;
+  background: #3a2d51;
+  border-radius: 7px;
+  color: #ad9dcb;
+  padding: 12px 14px;
+  font-size: 13px;
+  line-height: 1.25
+}
+
+.fusion-game .muted-button {
+  background: #5c4c78;
+  padding: 5px 13px;
+  color: #ded3f2;
+  font-weight: 500
+}
+
+.fusion-game .properties-module {
+  min-height: 340px
+}
+
+.fusion-game .property-entry {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 19px 3px;
+  color: #fff;
+  font-size: 14px
+}
+
+.fusion-game .property-flag {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  border: 2px solid #ffffffdd
+}
+
+@media(max-width:1490px) {
+  .layout-game.fusion-game {
+    width: 1490px
+  }
+}
+
+@media(max-width:850px) {
+  .layout-game.fusion-game {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 9px
+  }
+
+  .fusion-game .side-left,
+  .fusion-game .side-right {
+    width: 100%
+  }
+
+  .fusion-game .board-wrap-v2 {
+    justify-content: flex-start;
+    overflow-x: auto;
+    width: 100%;
+    min-width: 0
+  }
+
+  .fusion-game .board-reference {
+    flex-shrink: 0
+  }
+
+  .fusion-game .side-left .chat {
+    height: 260px
+  }
+}
+
+/* ===== V6: composición adaptable, espacios laterales simétricos ===== */
+/* La caja no crece artificialmente por encima del ancho visible. */
+.layout-game.fusion-game {
+  width: 100%;
+  max-width: 1920px;
+  min-width: 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+  grid-template-columns: minmax(220px, 1fr) minmax(0, 866px) minmax(220px, 1fr);
+  column-gap: 18px;
+  row-gap: 20px;
+  align-items: start;
+}
+
+.fusion-game .board-wrap-v2 {
+  width: 100%;
+  min-width: 0;
+  overflow: visible;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+.fusion-game .board-reference {
+  width: 866px;
+  min-width: 866px;
+  height: 866px;
+  min-height: 866px;
+  flex: 0 0 866px;
+}
+
+.fusion-game .side-left,
+.fusion-game .side-right {
+  min-width: 0;
+  width: 100%;
+  align-self: start;
+}
+
+.fusion-game .player-row {
+  grid-template-columns: 32px minmax(0, 1fr) auto;
+  gap: 8px;
+  padding-left: 8px;
+  padding-right: 8px
+}
+
+.fusion-game .player-label {
+  min-width: 0
+}
+
+.fusion-game .module-message {
+  overflow-wrap: anywhere
+}
+
+.fusion-game .side-module {
+  min-width: 0
+}
+
+/* En el punto en que no caben tablero y dos paneles: tablero primero. */
+@media (max-width: 1420px) {
+  .layout-game.fusion-game {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    gap: 20px;
+    padding: 12px;
+    overflow-x: clip;
+  }
+
+  .fusion-game .board-wrap-v2 {
+    order: 0;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    justify-content: safe center;
+    scrollbar-width: thin;
+    scrollbar-color: #7456a1 #1b1327;
+    padding-bottom: 7px;
+  }
+
+  .fusion-game .board-reference {
+    width: 866px;
+    height: 866px;
+    min-width: 866px;
+    min-height: 866px;
+    flex: 0 0 866px;
+  }
+
+  .fusion-game .side-left {
+    order: 1;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .fusion-game .side-right {
+    order: 2;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .fusion-game .side-left .chat {
+    height: 310px;
+  }
+
+  .fusion-game .ad-showcase {
+    display: flex
+  }
+
+  .fusion-game .properties-module {
+    min-height: 260px
+  }
+}
+
+@media(max-width:600px) {
+  .layout-game.fusion-game {
+    gap: 14px;
+    padding: 8px
+  }
+
+  .fusion-game .board-wrap-v2 {
+    justify-content: flex-start;
+    border-radius: 8px;
+  }
+
+  .fusion-game .side-left .logo {
+    font-size: 34px
+  }
+
+  .fusion-game .side-left .chat {
+    height: 270px
+  }
+
+  .fusion-game .players-panel {
+    padding: 9px 7px
+  }
+
+  .fusion-game .player-row {
+    gap: 7px;
+    min-height: 48px
+  }
+
+  .fusion-game .player-label,
+  .fusion-game .player-cash {
+    font-size: 12px
+  }
+
+  .fusion-game .face {
+    width: 29px;
+    height: 29px
+  }
+
+  .fusion-game .module-message {
+    font-size: 12px;
+    padding: 12px 8px
+  }
+
+  .fusion-game .properties-module {
+    min-height: 220px
+  }
+}
+
+
+/* ===== V8: separaciones equilibradas y precios laterales ===== */
+/* 900px para el tablero de 866px: 17px de respiración por lado.
+   El gap de columnas se añade a ese espacio, también a la derecha. */
+@media (min-width:1421px) {
+  .layout-game.fusion-game {
+    grid-template-columns: minmax(220px, 1fr) minmax(0, 900px) minmax(220px, 1fr);
+    column-gap: 26px;
+  }
+
+  .fusion-game .board-wrap-v2 {
+    width: 100%;
+    padding: 0 17px;
+    box-sizing: border-box;
+    overflow: visible;
+  }
+}
+
+/* Los estilos antiguos fijaban simultáneamente left/right y top/bottom;
+   esto expandía el fondo gris del precio sobre casi toda la casilla. */
+.fusion-game .board-reference .prop-tile.edge-left .prop-price {
+  left: 5px;
+  right: auto;
+  top: 50%;
+  bottom: auto;
+  width: max-content;
+  height: max-content;
+  writing-mode: vertical-rl;
+  transform: translateY(-50%) rotate(180deg);
+  padding: 5px 3px;
+  background: rgba(148, 151, 171, .66);
+}
+
+.fusion-game .board-reference .prop-tile.edge-right .prop-price {
+  left: auto;
+  right: 5px;
+  top: 50%;
+  bottom: auto;
+  width: max-content;
+  height: max-content;
+  writing-mode: vertical-rl;
+  transform: translateY(-50%);
+  padding: 5px 3px;
+  background: rgba(148, 151, 171, .66);
+}
+
+@media (max-width:1420px) {
+  .fusion-game .board-wrap-v2 {
+    padding: 0 0 7px;
+  }
+}

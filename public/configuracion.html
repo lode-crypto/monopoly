@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width,initial-scale=1" name="viewport" />
+    <title>Configuración | MONOpoly CEICOM</title>
+    <link href="styles.css" rel="stylesheet" />
+    <link href="extras.css" rel="stylesheet" />
+    <script defer="" src="ui.js"></script>
+<link href="integracion.css" rel="stylesheet"/><script defer src="/socket.io/socket.io.js"></script></head>
+
+<body class="app-page">
+    <header class="app-top"><a class="logo" href="index.html">MONO<span>poly</span></a><button aria-label="Abrir menú"
+            class="mobile-menu" data-menu="toggle">☰ Menú</button>
+        <nav aria-label="Secciones principales" class="app-links"><a href="index.html"><span class="nav-ico">⌂</span>
+                Inicio</a><a href="salas.html"><span class="nav-ico">♟</span> Salas</a><a href="sala.html"><span
+                    class="nav-ico">◈</span> Sala de espera</a><a href="juego.html"><span class="nav-ico">🎲</span>
+                Tablero</a><a href="usuario.html"><span class="nav-ico">◉</span>
+                Perfil</a><a href="historial.html"><span class="nav-ico">◷</span> Historial</a><a
+                href="estadisticas.html"><span class="nav-ico">▥</span> Estadísticas</a><a
+                href="configuracion.html"><span class="nav-ico">⚙</span> Configuración</a><a href="ayuda.html"><span
+                    class="nav-ico">?</span> Cómo jugar</a><a href="admin.html"><span class="nav-ico">▦</span>
+                Administración</a></nav>
+        <div class="top-user"><span>🪙 180</span><a class="mini-link" href="login.html">Ingresar</a></div>
+    </header>
+    <main class="page-container">
+        <div class="page-title">
+            <div><span class="eyebrow">CEICOM · SIMULACIÓN EMPRESARIAL</span>
+                <h1>Configuración</h1>
+                <p>Preferencias visuales y opciones de seguridad de la cuenta.</p>
+            </div><a class="btn primary" href="juego.html">🎲 Ver tablero</a>
+        </div>
+        <div class="two-col">
+            <section class="surface">
+                <h2>Preferencias de cuenta</h2>
+                <div class="info-row">
+                    <div><strong>Idioma</strong><small>Idioma de interfaz</small></div><select>
+                        <option>Español</option>
+                        <option>English</option>
+                    </select>
+                </div>
+                <div class="info-row">
+                    <div><strong>Efectos de sonido</strong><small>Sonidos del juego</small></div><button
+                        aria-label="Alternar sonido" class="visual-switch on" data-switch=""></button>
+                </div>
+                <div class="info-row">
+                    <div><strong>Música</strong><small>Música del menú</small></div><button aria-label="Alternar música"
+                        class="visual-switch" data-switch=""></button>
+                </div>
+                <div class="info-row">
+                    <div><strong>Notificaciones</strong><small>Invitaciones de amigos</small></div><button
+                        aria-label="Alternar notificaciones" class="visual-switch on" data-switch=""></button>
+                </div>
+                <div class="info-row">
+                    <div><strong>Apariencia de jugador</strong><small>Selecciona un color</small></div><button
+                        class="btn sm" data-modal="apariencia">Elegir</button>
+                </div>
+            </section>
+            <section class="surface">
+                <h2>Privacidad y seguridad</h2>
+                <div class="info-row">
+                    <div><strong>Sala privada</strong><small>Restringir el acceso mediante enlace</small></div><button
+                        aria-label="Sala privada" class="visual-switch" data-switch=""></button>
+                </div>
+                <div class="info-row">
+                    <div><strong>Cuenta</strong><small>Cambiar nombre de usuario</small></div><button class="btn sm"
+                        data-modal="editar-perfil">Editar</button>
+                </div>
+                <div class="info-row">
+                    <div><strong>Jugadores bloqueados</strong><small>Gestiona los jugadores bloqueados</small></div>
+                    <button class="btn sm" data-modal="bloqueados">Administrar</button>
+                </div>
+                <div class="info-row">
+                    <div><strong>Cerrar sesión</strong><small>Acceso de ejemplo</small></div><button class="btn sm"
+                        data-modal="cerrar-sesion">Cerrar sesión</button>
+                </div>
+            </section>
+            <div class="surface"><button class="btn primary" data-modal="guardar">Guardar cambios</button></div>
+        </div>
+    </main>
+    <div class="demo-overlay" hidden="" id="demo-modal">
+        <div aria-labelledby="modal-title" aria-modal="true" class="demo-dialog" role="dialog"><button
+                aria-label="Cerrar" class="modal-close" data-close="">✕</button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+    <div aria-live="polite" class="demo-toast" id="toast" role="status"></div>
+    <footer class="demo-footer">Prototipo visual en español · Inspirado en MONOpoly · Sin conexión a partidas reales
+    </footer>
+</body>
+
+</html>

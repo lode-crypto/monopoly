@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tablero de juego | MONOpoly CEICOM</title>
+<link href="styles.css" rel="stylesheet"/>
+<link href="tablero-corregido.css" rel="stylesheet"/>
+<link href="fusion.css" rel="stylesheet"/><link href="extras.css" rel="stylesheet"/><script defer="" src="ui.js"></script><link href="integracion.css" rel="stylesheet"/><script defer src="/socket.io/socket.io.js"></script></head>
+<body><div class="game-shortcuts"><a href="index.html">⌂ Inicio</a><a href="salas.html">♟ Salas</a><a href="perfil.html">◉ Perfil</a><button data-modal="config-sala">⚙ Reglas</button><button data-modal="lanzar-dados">🎲 Lanzar</button><button data-modal="comprar">💳 Comprar</button><button data-modal="subasta">🔨 Subasta</button><button data-modal="sorpresa">❔ Carta</button></div>
+<main class="layout-game fusion-game"><aside class="game-side side-left">
+<a class="logo" href="index.html">MONO<span>poly</span></a>
+<section class="card compact-card">
+<h3>Compartir esta partida</h3>
+<div class="share-input stack-sm">
+<input class="input" readonly="" value="https://MONOpoly/room/xolfy"/>
+<div class="row share-actions">
+<a class="btn sm grow" href="#">📋 Copiar</a>
+<a class="btn sm outline grow" href="sala.html">⚙ Sala</a>
+</div>
+</div>
+</section>
+
+<section class="card chat compact-card"><div class="chat-heading"><span>◖   ⛶</span><strong>Chat</strong><span></span></div><div class="empty-chat">☁   No hay mensajes todavía</div><div class="chat-input"><span>Escribe un mensaje...</span><span class="send-circle">➤</span></div></section>
+</aside><section class="board-wrap board-wrap-v2">
+<div class="board board-rich board-reference">
+<!-- fila superior -->
+<div class="prop-tile kind-start edge-top corner-tile" data-modal="evento" role="button" style="grid-row:1;grid-column:1" tabindex="0">
+<div class="prop-content start-content">
+<span class="prop-symbol">⏩</span>
+<span class="prop-label">SALIDA</span>
+</div>
+</div>
+<div class="prop-tile kind-city edge-top group-lime" data-modal="propiedad" role="button" style="grid-row:1;grid-column:2" tabindex="0">
+<span class="prop-stripe"></span>
+<span class="prop-price">60$</span>
+<div class="prop-content"><span class="prop-label">Salvador</span></div>
+<span aria-label="Bandera de Brasil" class="prop-flag flag-br"></span>
+</div>
+<div class="prop-tile kind-treasure edge-top" data-modal="evento" role="button" style="grid-row:1;grid-column:3" tabindex="0">
+<div class="prop-content">
+<span class="prop-symbol">💼</span>
+<span class="prop-label">Tesoro</span>
+</div>
+</div>
+<div class="prop-tile kind-city edge-top group-teal owner-cyan" data-modal="propiedad" role="button" style="grid-row:1;grid-column:4" tabindex="0">
+<span class="prop-stripe"></span>
+<span class="prop-price">60$</span>
+<div class="prop-content"><span class="prop-label">Rio</span></div>
+<span aria-label="Bandera de Brasil" class="prop-flag flag-br"></span>
+</div>
+<div class="prop-tile kind-tax edge-top" data-modal="evento" role="button" style="grid-row:1;grid-column:5" tabindex="0">
+<div class="prop-content">
+<span class="prop-symbol">💸</span>
+<span class="prop-label">Impuesto<br/><small>%10</small></span>
+</div>
+</div>
+<div class="prop-tile kind-airport edge-top" data-modal="casilla" role="button" style="grid-row:1;grid-column:6" tabindex="0">
+<span class="prop-price">200$</span>
+<div class="prop-content">
+<span class="prop-symbol">✈️</span>
+<span class="prop-label">Aeropuerto TLV</span>
+</div>
+</div>
+<div class="prop-tile kind-city edge-top group-lilac owner-lilac" data-modal="propiedad" role="button" style="grid-row:1;grid-column:7" tabindex="0">
+<span class="prop-stripe"></span>
+<span class="prop-price">100$</span>
+<div class="prop-content"><span class="prop-label">Tel Aviv</span></div>
+<span aria-label="Bandera de Israel" class="prop-flag flag-il"></span>
+</div>
+<div class="prop-tile kind-city edge-top group-lilac owner-coral player-on-tile" data-modal="propiedad" role="button" style="grid-row:1;grid-column:8" tabindex="0">
+<span class="prop-stripe"></span>
+<span class="prop-price">110$</span>
+<div class="prop-content"><span class="prop-label">Haifa</span></div>
+<span aria-label="Bandera de Israel" class="prop-flag flag-il"></span>
+<span class="piece piece-red"></span>
+</div>
+<div class="prop-tile kind-surprise edge-top" data-modal="evento" role="button" style="grid-row:1;grid-column:9" tabindex="0">
+<div class="prop-content">
+<span class="prop-symbol">❔</span>
+<span class="prop-label">Sorpresa</span>
+</div>
+</div>
+<div class="prop-tile kind-city edge-top group-teal owner-cyan" data-modal="propiedad" role="button" style="grid-row:1;grid-column:10" tabindex="0">
+<span class="prop-stripe"></span>
+<span class="prop-price">120$</span>
+<div class="prop-content"><span class="prop-label">Jerusalem</span></div>
+<span aria-label="Bandera de Israel" class="prop-flag flag-il"></span>
+</div>
+<div class="prop-tile kind-prison edge-top corner-tile" data-modal="evento" role="button" style="grid-row:1;grid-column:11" tabindex="0">
+<div class="prop-content prison-content">
+<span class="prop-label top-small">Evento</span>
+<span class="prop-bars"></span>
+<span class="prop-label">educativo</span>
+</div>
+</div>
+<!-- lateral derecho -->
+<div class="prop-tile kind-city edge-right group-lilac owner-lilac" data-modal="propiedad" role="button" style="grid-row:2;grid-column:11" tabindex="0">
+<span class="prop-stripe"></span><span class="prop-price">130$</span>
+<div class="prop-content"><span class="prop-label">Venecia</span></div>
+<span class="prop-flag flag-it"></span>
+</div>
+<div class="prop-tile kind-utility edge-right owner-cyan" data-modal="casilla" role="button" style="grid-row:3;grid-column:11" tabindex="0">
+<span class="prop-stripe"></span><span class="prop-price">150$</span>
+<div class="prop-content"><span class="prop-symbol">⚡</span><span class="prop-label">Electricidad</span></div>
+</div>
+<div class="prop-tile kind-city edge-right group-teal owner-cyan" data-modal="propiedad" role="button" style="grid-row:4;grid-column:11" tabindex="0">
+<span class="prop-stripe"></span><span class="prop-price">140$</span>
+<div class="prop-content"><span class="prop-label">Milán</span></div>
+<span class="prop-flag flag-it"></span>
+</div>
+<div class="prop-tile kind-city edge-right group-teal owner-cyan" data-modal="propiedad" role="button" style="grid-row:5;grid-column:11" tabindex="0">
+<span class="prop-stripe"></span><span class="prop-price">160$</span>
+<div class="prop-content"><span class="prop-label">Roma</span></div>
+<span class="prop-flag flag-it"></span>
+</div>
+<div class="prop-tile kind-airport edge-right" data-modal="casilla" role="button" style="grid-row:6;grid-column:11" tabindex="0">
+<span class="prop-price">200$</span>
+<div class="prop-content"><span class="prop-symbol">✈️</span><span class="prop-label">Aeropuerto MUC</span></div>
+</div>
+<div class="prop-tile kind-city edge-right group-lilac owner-lilac" data-modal="propiedad" role="button" style="grid-row:7;grid-column:11" tabindex="0">
+<span class="prop-stripe"></span><span class="prop-price">180$</span>
+<div class="prop-content"><span class="prop-label">Fráncfort</span></div>
+<span class="prop-flag flag-de"></span>
+</div>
+<div class="prop-tile kind-treasure edge-right" data-modal="evento" role="button" style="grid-row:8;grid-column:11" tabindex="0">
+<div class="prop-content"><span class="prop-symbol">💼</span><span class="prop-label">Tesoro</span></div>
+</div>
+<div class="prop-tile kind-city edge-right group-lilac owner-coral player-on-tile" data-modal="propiedad" role="button" style="grid-row:9;grid-column:11" tabindex="0">
+<span class="prop-stripe"></span><span class="prop-price">190$</span>
+<div class="prop-content"><span class="prop-label">Múnich</span></div>
+<span class="prop-flag flag-de"></span>
+<span class="piece piece-pink"></span>
+</div>
+<div class="prop-tile kind-city edge-right group-lilac" data-modal="propiedad" role="button" style="grid-row:10;grid-column:11" tabindex="0">
+<span class="prop-stripe"></span><span class="prop-price">200$</span>
+<div class="prop-content"><span class="prop-label">Berlin</span></div>
+<span class="prop-flag flag-de"></span>
+</div>
+<!-- fila inferior -->
+<div class="prop-tile kind-vacation edge-bottom corner-tile" data-modal="evento" role="button" style="grid-row:11;grid-column:11" tabindex="0">
+<div class="prop-content"><span class="prop-symbol">🏝️</span><span class="prop-label">Vacaciones</span></div>
+</div>
+<div class="prop-tile kind-city edge-bottom group-lilac owner-lilac" data-modal="propiedad" role="button" style="grid-row:11;grid-column:10" tabindex="0">
+<span class="prop-stripe"></span><span class="prop-price">210$</span>
+<div class="prop-content"><span class="prop-label">Shenzhen</span></div>
+<span class="prop-flag flag-cn"></span>
+</div>
+<div class="prop-tile kind-surprise edge-bottom" data-modal="evento" role="button" style="grid-row:11;grid-column:9" tabindex="0">
+<div class="prop-content"><span class="prop-symbol">❔</span><span class="prop-label">Sorpresa</span></div>
+</div>
+<div class="prop-tile kind-city edge-bottom group-teal owner-cyan" data-modal="propiedad" role="button" style="grid-row:11;grid-column:8" tabindex="0">
+<span class="prop-stripe"></span><span class="prop-price">220$</span>
+<div class="prop-content"><span class="prop-label">Pekín</span></div>
+<span class="prop-flag flag-cn"></span>
+</div>
+<div class="prop-tile kind-city edge-bottom group-lilac owner-coral player-on-tile" data-modal="propiedad" role="button" style="grid-row:11;grid-column:7" tabindex="0">
+<span class="prop-stripe"></span><span class="prop-price">240$</span>
+<div class="prop-content"><span class="prop-label">Shanghái</span></div>
+<span class="prop-flag flag-cn"></span>
+<span class="piece piece-red"></span>
+</div>
+<div class="prop-tile kind-airport edge-bottom" data-modal="casilla" role="button" style="grid-row:11;grid-column:6" tabindex="0">
+<span class="prop-price">200$</span>
+<div class="prop-content"><span class="prop-symbol">✈️</span><span class="prop-label">Aeropuerto CDG</span></div>
+</div>
+<div class="prop-tile kind-city edge-bottom group-teal" data-modal="propiedad" role="button" style="grid-row:11;grid-column:5" tabindex="0">
+<span class="prop-stripe"></span><span class="prop-price">260$</span>
+<div class="prop-content"><span class="prop-label">Lyon</span></div>
+<span class="prop-flag flag-fr"></span>
+</div>
+<div class="prop-tile kind-utility edge-bottom" data-modal="casilla" role="button" style="grid-row:11;grid-column:4" tabindex="0">
+<span class="prop-price">150$</span>
+<div class="prop-content"><span class="prop-symbol">🚰</span><span class="prop-label">Compañía de agua</span></div>
+</div>
+<div class="prop-tile kind-city edge-bottom group-lilac owner-lilac" data-modal="propiedad" role="button" style="grid-row:11;grid-column:3" tabindex="0">
+<span class="prop-stripe"></span><span class="prop-price">270$</span>
+<div class="prop-content"><span class="prop-label">Toulouse</span></div>
+<span class="prop-flag flag-fr"></span>
+</div>
+<div class="prop-tile kind-city edge-bottom group-teal" data-modal="propiedad" role="button" style="grid-row:11;grid-column:2" tabindex="0">
+<span class="prop-stripe"></span><span class="prop-price">280$</span>
+<div class="prop-content"><span class="prop-label">París</span></div>
+<span class="prop-flag flag-fr"></span>
+</div>
+<div class="prop-tile kind-goto edge-bottom corner-tile" data-modal="evento" role="button" style="grid-row:11;grid-column:1" tabindex="0">
+<div class="prop-content"><span class="prop-symbol">☠️</span><span class="prop-label">Evento económico</span></div>
+</div>
+<!-- lateral izquierdo -->
+<div class="prop-tile kind-city edge-left group-lilac owner-lilac" data-modal="propiedad" role="button" style="grid-row:10;grid-column:1" tabindex="0">
+<span class="prop-stripe"></span><span class="prop-price">290$</span>
+<div class="prop-content"><span class="prop-label">Liverpool</span></div>
+<span class="prop-flag flag-gb"></span>
+</div>
+<div class="prop-tile kind-city edge-left group-lilac" data-modal="propiedad" role="button" style="grid-row:9;grid-column:1" tabindex="0">
+<span class="prop-stripe"></span><span class="prop-price">300$</span>
+<div class="prop-content"><span class="prop-label">Manchester</span></div>
+<span class="prop-flag flag-gb"></span>
+</div>
+<div class="prop-tile kind-treasure edge-left" data-modal="evento" role="button" style="grid-row:8;grid-column:1" tabindex="0">
+<div class="prop-content"><span class="prop-symbol">💼</span><span class="prop-label">Tesoro</span></div>
+</div>
+<div class="prop-tile kind-city edge-left group-lilac owner-lilac" data-modal="propiedad" role="button" style="grid-row:7;grid-column:1" tabindex="0">
+<span class="prop-stripe"></span><span class="prop-price">320$</span>
+<div class="prop-content"><span class="prop-label">Londres</span></div>
+<span class="prop-flag flag-gb"></span>
+</div>
+<div class="prop-tile kind-airport edge-left" data-modal="casilla" role="button" style="grid-row:6;grid-column:1" tabindex="0">
+<span class="prop-price">200$</span>
+<div class="prop-content"><span class="prop-symbol">✈️</span><span class="prop-label">Aeropuerto JFK</span></div>
+</div>
+<div class="prop-tile kind-surprise edge-left" data-modal="evento" role="button" style="grid-row:5;grid-column:1" tabindex="0">
+<div class="prop-content"><span class="prop-symbol">❔</span><span class="prop-label">Sorpresa</span></div>
+</div>
+<div class="prop-tile kind-city edge-left group-lilac owner-lilac" data-modal="propiedad" role="button" style="grid-row:4;grid-column:1" tabindex="0">
+<span class="prop-stripe"></span><span class="prop-price">360$</span>
+<div class="prop-content"><span class="prop-label">San Francisco</span></div>
+<span class="prop-flag flag-us"></span>
+</div>
+<div class="prop-tile kind-tax edge-left" data-modal="evento" role="button" style="grid-row:3;grid-column:1" tabindex="0">
+<div class="prop-content"><span class="prop-symbol">💍</span><span class="prop-label">Impuesto prima<br/><small>$75</small></span></div>
+</div>
+<div class="prop-tile kind-city edge-left group-teal owner-cyan player-on-tile" data-modal="propiedad" role="button" style="grid-row:2;grid-column:1" tabindex="0">
+<span class="prop-stripe"></span><span class="prop-price">400$</span>
+<div class="prop-content"><span class="prop-label">Nueva York</span></div>
+<span class="prop-flag flag-us"></span>
+<span class="piece piece-blue"></span>
+</div>
+<div class="board-center-new">
+<div class="round-timer"><span class="timer-ring"></span>2:47</div>
+<div aria-label="Dados decorativos" class="dice-pair">
+<div class="css-die die-one"><i></i></div>
+<div class="css-die die-five"><i></i><i></i><i></i><i></i><i></i></div>
+</div>
+<div class="current-player"><span class="current-avatar">●</span><b>LOKAJAYA</b> está jugando…</div>
+<div class="activity-feed">
+<p>🟣 <b>JayCee</b> compró ✈️ Aeropuerto TLV</p>
+<p>🟣 <b>JayCee</b> pasó por Salida y recibió $200</p>
+<p>🟢 <b>LOKAJAYA</b> no consiguió dobles para salir de prisión</p>
+<p>🟢 <b>LOKAJAYA</b> entró en prisión</p>
+<p>🟢 <b>LOKAJAYA</b> obtuvo una carta sorpresa: Evento económico</p>
+<p>🟣 <b>JayCee</b> compró 🇫🇷 Toulouse</p>
+<p>🟢 <b>LOKAJAYA</b> pagó $14 a JayCee</p>
+<p>🟣 <b>JayCee</b> compró 🇨🇳 Shenzhen</p>
+</div>
+<div class="center-note">Vista de demostración · Solo frontend</div>
+</div>
+</div>
+</section><aside class="game-side side-right actual-game-sidebar">
+<section class="players-panel">
+<div class="player-row" data-modal="perfil-jugador" role="button" tabindex="0"><span class="face purple"><i></i></span><span class="player-label">Mean Tackle <span class="robot">♟</span></span><span class="player-cash">$990</span></div>
+<div class="player-row selected" data-modal="perfil-jugador" role="button" tabindex="0"><span class="face blue"><i></i></span><span class="player-label">you <span class="me-icon">➜</span> <span class="crown">♛</span></span><span class="player-cash">$1376</span></div>
+<div class="player-row" data-modal="perfil-jugador" role="button" tabindex="0"><span class="face red"><i></i></span><span class="player-label">Evil Nose <span class="robot">♟</span></span><span class="player-cash">$1492</span></div>
+<div class="player-row" data-modal="perfil-jugador" role="button" tabindex="0"><span class="face pink"><i></i></span><span class="player-label">Fat Promise <span class="robot">♟</span></span><span class="player-cash">$1272</span></div>
+</section>
+<div class="bankrupt-bar"><span class="fake-button bankrupt" data-modal="bancarrota">⚑ Bancarrota</span></div>
+<section class="side-module trades-module">
+<div class="module-header"><h3>Intercambios</h3><span class="fake-button create" data-modal="intercambio">✚ Crear</span></div>
+<div class="module-message"><span>ⓘ Make trades with other players to exchange properties, money and bonus cards. Use the "Crear" button to create a new trade.</span><span class="fake-button muted-button" data-modal="propiedad">✓ Entendido</span></div>
+</section>
+<section class="side-module properties-module">
+<div class="module-header centered"><h3>Mis propiedades (1)</h3></div>
+<div class="module-message"><span>ⓘ Selecciona una propiedad para mejorarla, hipotecarla o venderla.</span><span class="fake-button muted-button" data-modal="propiedad">✓ Entendido</span></div>
+<div class="property-entry" data-modal="propiedad" role="button" tabindex="0"><span class="property-flag flag-il"></span><strong>Jerusalén</strong></div>
+</section></aside></main>
+<div class="demo-overlay" hidden="" id="demo-modal"><div aria-labelledby="modal-title" aria-modal="true" class="demo-dialog" role="dialog"><button aria-label="Cerrar" class="modal-close" data-close="">✕</button><div id="modal-body"></div></div></div><div class="demo-toast" id="toast" role="status"></div></body>
+</html>

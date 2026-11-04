@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width,initial-scale=1.0" name="viewport" />
+    <title>Panel de usuario | MONOpoly CEICOM</title>
+    <link href="styles.css" rel="stylesheet" />
+    <link href="extras.css" rel="stylesheet" />
+    <script defer="" src="ui.js"></script>
+<link href="integracion.css" rel="stylesheet"/><script defer src="/socket.io/socket.io.js"></script></head>
+
+<body>
+    <div class="legacy-shortcuts"><a href="index.html">Inicio</a><a href="salas.html">Salas</a><a href="perfil.html">Perfil</a><a
+            href="historial.html">Historial</a><a href="configuracion.html">Configuración</a></div>
+    <div class="dashboard-layout">
+        <aside class="sidebar"><a class="logo" href="index.html">MONO<span>poly</span></a><a class="nav-item active"
+                href="usuario.html"><span class="sym">◉</span>Mi perfil</a><a class="nav-item" href="sala.html"><span
+                    class="sym">🎲</span>Salas de juego</a><a class="nav-item" href="juego.html"><span
+                    class="sym">▦</span>Ver tablero</a><a class="nav-item" href="admin.html"><span
+                    class="sym">⚙</span>Administración</a>
+            <div class="sidebar-bottom"><a class="nav-item" href="index.html"><span class="sym">↩</span>Salir al
+                    inicio</a></div>
+        </aside>
+        <main class="dashboard-content">
+            <header class="dashboard-top"><span class="muted small">Panel / Mi perfil</span>
+                <div class="top-actions"><span>🔔</span><span class="avatar" style="--avatar:#7958d9">🎭</span></div>
+            </header>
+            <h1 class="page-heading">Mi cuenta</h1>
+            <p class="page-subheading">Perfil personal, historial y progreso del jugador.</p>
+            <section class="profile-banner"><span class="avatar" style="--avatar:#7958d9">🎭</span>
+                <div class="grow">
+                    <h2>JugadorDemo</h2>
+                    <p>Miembro desde noviembre de 2026 · Nivel 12</p><span class="tag success">● En línea</span>
+                </div><button class="btn outline">✎ Editar perfil</button>
+            </section>
+            <div class="user-stats">
+                <div class="card">
+                    <div class="metric-label">Partidas jugadas</div>
+                    <div class="stat">48</div>
+                    <div class="metric-foot">↗ +5 esta semana</div>
+                </div>
+                <div class="card">
+                    <div class="metric-label">Victorias</div>
+                    <div class="stat">19</div>
+                    <div class="helper">39.6% de las partidas</div>
+                </div>
+                <div class="card">
+                    <div class="metric-label">Monedas acumuladas</div>
+                    <div class="stat">$84,250</div>
+                    <div class="helper">Balance demostrativo</div>
+                </div>
+            </div>
+            <div class="user-grid">
+                <section class="card">
+                    <div class="panel-header">
+                        <h3>Historial de partidas</h3><span class="tag purple">Últimas 4</span>
+                    </div>
+                    <div class="table-scroll">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Partida</th>
+                                    <th>Fecha</th>
+                                    <th>Resultado</th>
+                                    <th>Jugadores</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Sala Clásica #105</td>
+                                    <td>03 nov 2026</td>
+                                    <td><span class="tag success">Victoria</span></td>
+                                    <td>4</td>
+                                </tr>
+                                <tr>
+                                    <td>Partida privada #88</td>
+                                    <td>02 nov 2026</td>
+                                    <td><span class="tag purple">2.º puesto</span></td>
+                                    <td>3</td>
+                                </tr>
+                                <tr>
+                                    <td>Clásico #79</td>
+                                    <td>31 oct 2026</td>
+                                    <td><span class="tag success">Victoria</span></td>
+                                    <td>4</td>
+                                </tr>
+                                <tr>
+                                    <td>Partida #72</td>
+                                    <td>29 oct 2026</td>
+                                    <td><span class="tag purple">3.º puesto</span></td>
+                                    <td>4</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                <section class="card">
+                    <h3>Logros recientes</h3>
+                    <div class="achievements">
+                        <div class="achievement">
+                            <div class="emoji">🏆</div><b>Campeón</b>
+                            <p>10 victorias</p>
+                        </div>
+                        <div class="achievement">
+                            <div class="emoji">🏙️</div><b>Inversor</b>
+                            <p>20 propiedades</p>
+                        </div>
+                        <div class="achievement">
+                            <div class="emoji">💎</div><b>Magnate</b>
+                            <p>Gran fortuna</p>
+                        </div>
+                    </div>
+                    <p class="helper" style="margin-top:20px">Progreso del nivel 12</p>
+                    <div class="progress" style="--percent:68%"><span></span></div>
+                    <p class="helper">680 / 1000 puntos</p>
+                </section>
+            </div>
+            <div class="screen-only-note">* Datos de muestra para ilustrar el frontend.</div>
+        </main>
+    </div>
+    <div class="demo-overlay" hidden="" id="demo-modal">
+        <div aria-labelledby="modal-title" aria-modal="true" class="demo-dialog" role="dialog"><button
+                aria-label="Cerrar" class="modal-close" data-close="">✕</button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+    <div class="demo-toast" id="toast" role="status"></div>
+</body>
+
+</html>

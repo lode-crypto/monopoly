@@ -1,0 +1,441 @@
+[
+  {
+    "posicion": 0,
+    "nombre": "SALIDA",
+    "tipo": "salida",
+    "valores_base": {}
+  },
+  {
+    "posicion": 1,
+    "nombre": "Salvador",
+    "tipo": "activo",
+    "valores_base": {
+      "precio": 60,
+      "alquiler": 6,
+      "rescate": 30.0,
+      "costo_inversion": 100,
+      "incremento_alquiler": 25
+    }
+  },
+  {
+    "posicion": 2,
+    "nombre": "Tesoro",
+    "tipo": "evento",
+    "valores_base": {
+      "importe": 50,
+      "efecto": "ingreso"
+    }
+  },
+  {
+    "posicion": 3,
+    "nombre": "Rio",
+    "tipo": "activo",
+    "valores_base": {
+      "precio": 60,
+      "alquiler": 6,
+      "rescate": 30.0,
+      "costo_inversion": 100,
+      "incremento_alquiler": 25
+    }
+  },
+  {
+    "posicion": 4,
+    "nombre": "Impuesto empresarial",
+    "tipo": "impuesto",
+    "valores_base": {
+      "importe": 200
+    }
+  },
+  {
+    "posicion": 5,
+    "nombre": "Aeropuerto TLV",
+    "tipo": "activo",
+    "valores_base": {
+      "precio": 200,
+      "alquiler": 20,
+      "rescate": 100.0,
+      "costo_inversion": 100,
+      "incremento_alquiler": 25
+    }
+  },
+  {
+    "posicion": 6,
+    "nombre": "Tel Aviv",
+    "tipo": "activo",
+    "valores_base": {
+      "precio": 100,
+      "alquiler": 10,
+      "rescate": 50.0,
+      "costo_inversion": 100,
+      "incremento_alquiler": 25
+    }
+  },
+  {
+    "posicion": 7,
+    "nombre": "Haifa",
+    "tipo": "activo",
+    "valores_base": {
+      "precio": 110,
+      "alquiler": 11,
+      "rescate": 55.0,
+      "costo_inversion": 100,
+      "incremento_alquiler": 25
+    }
+  },
+  {
+    "posicion": 8,
+    "nombre": "Sorpresa",
+    "tipo": "evento",
+    "valores_base": {
+      "importe": 50,
+      "efecto": "ingreso"
+    }
+  },
+  {
+    "posicion": 9,
+    "nombre": "Jerusalem",
+    "tipo": "activo",
+    "valores_base": {
+      "precio": 120,
+      "alquiler": 12,
+      "rescate": 60.0,
+      "costo_inversion": 100,
+      "incremento_alquiler": 25
+    }
+  },
+  {
+    "posicion": 10,
+    "nombre": "Evento educativo",
+    "tipo": "evento",
+    "valores_base": {
+      "importe": 50,
+      "efecto": "gasto"
+    }
+  },
+  {
+    "posicion": 11,
+    "nombre": "Venecia",
+    "tipo": "activo",
+    "valores_base": {
+      "precio": 130,
+      "alquiler": 13,
+      "rescate": 65.0,
+      "costo_inversion": 100,
+      "incremento_alquiler": 25
+    }
+  },
+  {
+    "posicion": 12,
+    "nombre": "Electricidad",
+    "tipo": "activo",
+    "valores_base": {
+      "precio": 150,
+      "alquiler": 15,
+      "rescate": 75.0,
+      "costo_inversion": 100,
+      "incremento_alquiler": 25
+    }
+  },
+  {
+    "posicion": 13,
+    "nombre": "Milán",
+    "tipo": "activo",
+    "valores_base": {
+      "precio": 140,
+      "alquiler": 14,
+      "rescate": 70.0,
+      "costo_inversion": 100,
+      "incremento_alquiler": 25
+    }
+  },
+  {
+    "posicion": 14,
+    "nombre": "Roma",
+    "tipo": "activo",
+    "valores_base": {
+      "precio": 160,
+      "alquiler": 16,
+      "rescate": 80.0,
+      "costo_inversion": 100,
+      "incremento_alquiler": 25
+    }
+  },
+  {
+    "posicion": 15,
+    "nombre": "Aeropuerto MUC",
+    "tipo": "activo",
+    "valores_base": {
+      "precio": 200,
+      "alquiler": 20,
+      "rescate": 100.0,
+      "costo_inversion": 100,
+      "incremento_alquiler": 25
+    }
+  },
+  {
+    "posicion": 16,
+    "nombre": "Fráncfort",
+    "tipo": "activo",
+    "valores_base": {
+      "precio": 180,
+      "alquiler": 18,
+      "rescate": 90.0,
+      "costo_inversion": 100,
+      "incremento_alquiler": 25
+    }
+  },
+  {
+    "posicion": 17,
+    "nombre": "Tesoro",
+    "tipo": "evento",
+    "valores_base": {
+      "importe": 50,
+      "efecto": "gasto"
+    }
+  },
+  {
+    "posicion": 18,
+    "nombre": "Múnich",
+    "tipo": "activo",
+    "valores_base": {
+      "precio": 190,
+      "alquiler": 19,
+      "rescate": 95.0,
+      "costo_inversion": 100,
+      "incremento_alquiler": 25
+    }
+  },
+  {
+    "posicion": 19,
+    "nombre": "Berlin",
+    "tipo": "activo",
+    "valores_base": {
+      "precio": 200,
+      "alquiler": 20,
+      "rescate": 100.0,
+      "costo_inversion": 100,
+      "incremento_alquiler": 25
+    }
+  },
+  {
+    "posicion": 20,
+    "nombre": "Vacaciones",
+    "tipo": "evento",
+    "valores_base": {
+      "importe": 50,
+      "efecto": "ingreso"
+    }
+  },
+  {
+    "posicion": 21,
+    "nombre": "Shenzhen",
+    "tipo": "activo",
+    "valores_base": {
+      "precio": 210,
+      "alquiler": 21,
+      "rescate": 105.0,
+      "costo_inversion": 100,
+      "incremento_alquiler": 25
+    }
+  },
+  {
+    "posicion": 22,
+    "nombre": "Sorpresa",
+    "tipo": "evento",
+    "valores_base": {
+      "importe": 50,
+      "efecto": "ingreso"
+    }
+  },
+  {
+    "posicion": 23,
+    "nombre": "Pekín",
+    "tipo": "activo",
+    "valores_base": {
+      "precio": 220,
+      "alquiler": 22,
+      "rescate": 110.0,
+      "costo_inversion": 100,
+      "incremento_alquiler": 25
+    }
+  },
+  {
+    "posicion": 24,
+    "nombre": "Shanghái",
+    "tipo": "activo",
+    "valores_base": {
+      "precio": 240,
+      "alquiler": 24,
+      "rescate": 120.0,
+      "costo_inversion": 100,
+      "incremento_alquiler": 25
+    }
+  },
+  {
+    "posicion": 25,
+    "nombre": "Aeropuerto CDG",
+    "tipo": "activo",
+    "valores_base": {
+      "precio": 200,
+      "alquiler": 20,
+      "rescate": 100.0,
+      "costo_inversion": 100,
+      "incremento_alquiler": 25
+    }
+  },
+  {
+    "posicion": 26,
+    "nombre": "Lyon",
+    "tipo": "activo",
+    "valores_base": {
+      "precio": 260,
+      "alquiler": 26,
+      "rescate": 130.0,
+      "costo_inversion": 100,
+      "incremento_alquiler": 25
+    }
+  },
+  {
+    "posicion": 27,
+    "nombre": "Compañía de agua",
+    "tipo": "activo",
+    "valores_base": {
+      "precio": 150,
+      "alquiler": 15,
+      "rescate": 75.0,
+      "costo_inversion": 100,
+      "incremento_alquiler": 25
+    }
+  },
+  {
+    "posicion": 28,
+    "nombre": "Toulouse",
+    "tipo": "activo",
+    "valores_base": {
+      "precio": 270,
+      "alquiler": 27,
+      "rescate": 135.0,
+      "costo_inversion": 100,
+      "incremento_alquiler": 25
+    }
+  },
+  {
+    "posicion": 29,
+    "nombre": "París",
+    "tipo": "activo",
+    "valores_base": {
+      "precio": 280,
+      "alquiler": 28,
+      "rescate": 140.0,
+      "costo_inversion": 100,
+      "incremento_alquiler": 25
+    }
+  },
+  {
+    "posicion": 30,
+    "nombre": "Evento económico",
+    "tipo": "evento",
+    "valores_base": {
+      "importe": 100,
+      "efecto": "gasto"
+    }
+  },
+  {
+    "posicion": 31,
+    "nombre": "Liverpool",
+    "tipo": "activo",
+    "valores_base": {
+      "precio": 290,
+      "alquiler": 29,
+      "rescate": 145.0,
+      "costo_inversion": 100,
+      "incremento_alquiler": 25
+    }
+  },
+  {
+    "posicion": 32,
+    "nombre": "Manchester",
+    "tipo": "activo",
+    "valores_base": {
+      "precio": 300,
+      "alquiler": 30,
+      "rescate": 150.0,
+      "costo_inversion": 100,
+      "incremento_alquiler": 25
+    }
+  },
+  {
+    "posicion": 33,
+    "nombre": "Tesoro",
+    "tipo": "evento",
+    "valores_base": {
+      "importe": 50,
+      "efecto": "gasto"
+    }
+  },
+  {
+    "posicion": 34,
+    "nombre": "Londres",
+    "tipo": "activo",
+    "valores_base": {
+      "precio": 320,
+      "alquiler": 32,
+      "rescate": 160.0,
+      "costo_inversion": 100,
+      "incremento_alquiler": 25
+    }
+  },
+  {
+    "posicion": 35,
+    "nombre": "Aeropuerto JFK",
+    "tipo": "activo",
+    "valores_base": {
+      "precio": 200,
+      "alquiler": 20,
+      "rescate": 100.0,
+      "costo_inversion": 100,
+      "incremento_alquiler": 25
+    }
+  },
+  {
+    "posicion": 36,
+    "nombre": "Sorpresa",
+    "tipo": "evento",
+    "valores_base": {
+      "importe": 50,
+      "efecto": "ingreso"
+    }
+  },
+  {
+    "posicion": 37,
+    "nombre": "San Francisco",
+    "tipo": "activo",
+    "valores_base": {
+      "precio": 360,
+      "alquiler": 36,
+      "rescate": 180.0,
+      "costo_inversion": 100,
+      "incremento_alquiler": 25
+    }
+  },
+  {
+    "posicion": 38,
+    "nombre": "Impuesto prima$75",
+    "tipo": "impuesto",
+    "valores_base": {
+      "importe": 75
+    }
+  },
+  {
+    "posicion": 39,
+    "nombre": "Nueva York",
+    "tipo": "activo",
+    "valores_base": {
+      "precio": 400,
+      "alquiler": 40,
+      "rescate": 200.0,
+      "costo_inversion": 100,
+      "incremento_alquiler": 25
+    }
+  }
+]

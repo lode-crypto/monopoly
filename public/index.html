@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width,initial-scale=1.0" name="viewport" />
+    <title>Inicio | MONOpoly</title>
+    <link href="styles.css" rel="stylesheet" />
+    <link href="extras.css" rel="stylesheet" />
+    <script defer="" src="ui.js"></script>
+<link href="integracion.css" rel="stylesheet"/><script defer src="/socket.io/socket.io.js"></script></head>
+
+<body>
+    <main class="home">
+        <header class="topbar"><span class="muted">♫   Sonido</span>
+            <nav class="nav-links"><a href="salas.html">Salas</a><a href="perfil.html">Perfil</a><a href="ayuda.html">Cómo jugar</a><a
+                    href="login.html">Ingresar</a></nav>
+        </header>
+        <section class="home-center">
+            <div class="big-die">🎲</div>
+            <div class="logo brand-large">MONOpoly</div>
+            <p class="tagline">Domina la economía</p>
+            <div class="home-form"><input aria-label="Nombre" class="input" placeholder="Tu nombre de jugador"
+                    value="JugadorDemo" /><a class="btn primary lg" href="sala.html">❯❯   Jugar</a></div>
+            <div class="home-shortcuts"><a class="btn" href="salas.html">♟ Todas las salas</a><a class="btn"
+                    href="sala.html">⚿ Crear partida privada</a></div>
+            <p class="helper" style="margin-top:25px">Demo visual · Sin conexión ni partidas reales</p>
+        </section><span class="floating-emoji e1">🏙️</span><span class="floating-emoji e2">💼</span><span
+            class="floating-emoji e3">⚡</span><span class="floating-emoji e4">💰</span>
+    </main>
+    <div class="demo-overlay" hidden="" id="demo-modal">
+        <div aria-labelledby="modal-title" aria-modal="true" class="demo-dialog" role="dialog"><button
+                aria-label="Cerrar" class="modal-close" data-close="">✕</button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+    <div class="demo-toast" id="toast" role="status"></div>
+</body>
+
+</html>
